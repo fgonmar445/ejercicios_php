@@ -10,7 +10,7 @@
 <body>
     <h1>Ejercicio 19 Relacion 1 - Script PHP conversor numero a binario</h1>
     <?php
-    $num = 128;
+    $num = 4;
     $resul = "";
     echo "El resultado es: ";
     while ($num >= 2) {
