@@ -14,7 +14,7 @@
 </head>
 
 <body class="bg-light">
-  <div class="container my-5">
+  <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card mx-auto shadow" style="max-width: 500px;">
       <div class="card-header bg-primary text-white text-center">
         <h4>Formulario Calculadora</h4>
@@ -23,11 +23,11 @@
         <form action="calculadora.php" method="get">
           <div class="mb-3">
             <label for="num1" class="form-label">Introduce número 1:</label>
-            <input type="text" class="form-control" name="num1" id="num1" required>
+            <input type="number" step="0.01" class="form-control" name="num1" id="num1" required>
           </div>
           <div class="mb-3">
             <label for="num2" class="form-label">Introduce número 2:</label>
-            <input type="text" class="form-control" name="num2" id="num2" required>
+            <input type="number" step="0.01" class="form-control" name="num2" id="num2" required>
           </div>
           <div class="mb-3">
             <label for="operador" class="form-label">Selecciona operador:</label>
