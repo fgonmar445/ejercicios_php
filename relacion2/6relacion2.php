@@ -9,11 +9,11 @@
 </head>
 
 <body class="m-0">
-    <div class="container-fluid bg-secondary mt-0">
-        <h1 class="text-center my-3 pt-3">Relacion 2 - Ejercicio 6</h1>
-        <h2 class="text-center my-3 pb-3"> Tabla con Bootstrap</h2>
+    <div class="container-fluid bg-secondary w-50 mx-auto rounded">
+        <h1 class="text-center my-3 pt-3 text-light">Relacion 2 - Ejercicio 6</h1>
+        <h2 class="text-center my-3 pb-3 text-light"> Tabla con Bootstrap</h2>
     </div>
-    <table class="table table-striped table-hover my-5">
+    <table class="table table-striped table-hover my-5 mx-auto w-50">
         <thead>
             <tr>
                 <th scope="col">#</th>
