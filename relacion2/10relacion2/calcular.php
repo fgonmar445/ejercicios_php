@@ -1,9 +1,8 @@
 <?php
 $resultado = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["num1"], $_GET["num2"], $_GET["operacion"])) {
-    $num1 = floatval($_GET["num1"]);
-    $num2 = floatval($_GET["num2"]);
+    $num1 = ($_GET["num1"]);
+    $num2 = ($_GET["num2"]);
     $op = $_GET["operacion"];
 
     switch ($op) {
@@ -22,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["num1"], $_GET["num2"], $
         default:
             $resultado = "Operación no válida";
     }
-}
 ?>
 
 <!DOCTYPE html>
