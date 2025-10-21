@@ -12,7 +12,6 @@
 <?php
 $resultado = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["num1"], $_GET["num2"], $_GET["operacion"])) {
     $num1 = floatval($_GET["num1"]);
     $num2 = floatval($_GET["num2"]);
     $op = $_GET["operacion"];
@@ -33,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["num1"], $_GET["num2"], $
         default:
             $resultado = "Operación no válida";
     }
-}
 ?>
 <body>
     <main class="container py-5 w-50">
