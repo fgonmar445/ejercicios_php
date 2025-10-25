@@ -11,11 +11,12 @@
 </head>
 <?php
 $resultado = "";
+if (isset($_GET["num1"], $_GET["num2"], $_GET["operacion"])) {
 
     $num1 = floatval($_GET["num1"]);
     $num2 = floatval($_GET["num2"]);
     $op = $_GET["operacion"];
-
+    
     switch ($op) {
         case "+":
             $resultado = $num1 + $num2;
@@ -31,10 +32,10 @@ $resultado = "";
             break;
         default:
             $resultado = "Operación no válida";
-    }
+    }}
 ?>
 <body>
-    <main class="container py-5 w-50">
+    <main class="container  py-5 w-50">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="card border-0 shadow">
