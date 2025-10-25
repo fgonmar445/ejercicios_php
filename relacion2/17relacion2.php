@@ -14,39 +14,71 @@
             <h3>Ejercicio 17 - Relacion 2</h3>
         </div>
         <div class="card-body">
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form method="post" action="<?php echo ($_SERVER['PHP_SELF']); ?>">
                 <div class="mb-3">
-                    <label for="num1" class="form-label ">Introduce dividendo</label>
-                    <input type="number" class="form-control" name="dividendo" id="dividendo">
+                    <label for="dividendo" class="form-label">Introduce dividendo</label>
+                    <input type="number" class="form-control" name="dividendo" id="dividendo" required>
                 </div>
+
                 <div class="mb-3">
-                    <label for="num2" class="form-label">Introduce divisor</label>
-                    <input type="number" class="form-control" name="divisor" id="divisor">
+                    <label for="divisor" class="form-label">Introduce divisor</label>
+                    <input type="number" class="form-control" name="divisor" id="divisor" required>
                 </div>
-                <div class="mb-3">
-                    <fieldset class="mb-3">
-                        <legend class="fs-6 mb-3">Elige tus hobbies:</legend>
 
-                        <div class="form-check mb-2">
-                            <input type="checkbox" class="form-check-input" name="coeficiente" id="coeficiente">
-                            <label for="coeficiente" class="form-check-label">Coeficiente</label>
-                        </div>
+                <fieldset class="mb-3">
+                    <legend class="fs-6 mb-3">¿Qué deseas calcular?</legend>
 
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="resto" id="resto">
-                            <label for="resto" class="form-check-label">Resto</label>
-                        </div>
+                    <div class="form-check mb-2">
+                        <input type="checkbox" class="form-check-input" name="operaciones[]" value="cociente" id="cociente">
+                        <label for="cociente" class="form-check-label">Cociente</label>
+                    </div>
 
-                    </fieldset>
-                </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="operaciones[]" value="resto" id="resto">
+                        <label for="resto" class="form-check-label">Resto</label>
+                    </div>
+                </fieldset>
+
                 <div class="mb-3 d-flex justify-content-center">
                     <button class="btn btn-danger">Resultado</button>
                 </div>
-                <div class="mb3 border-danger">a</div>
-
             </form>
+
         </div>
     </div>
+
+    <?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $dividendo = $_POST["dividendo"];
+  $divisor = $_POST["divisor"];
+  $resultado = "";
+
+  if ($divisor == 0) {
+    $resultado = "Error: No se puede dividir entre cero.";
+  } elseif (isset($_POST["operaciones"])) {
+    $operaciones = $_POST["operaciones"];
+    $resultado .= "<ul class='list-unstyled text-decoration-none'>";
+
+    if (in_array("cociente", $operaciones)) {
+      $cociente = intdiv($dividendo, $divisor);
+      $resultado .= "<li>Cociente: $cociente</li>";
+    }
+
+    if (in_array("resto", $operaciones)) {
+      $resto = $dividendo % $divisor;
+      $resultado .= "<li>Resto: $resto</li>";
+    }
+
+    $resultado .= "</ul>";
+  } else {
+    $resultado = "No seleccionaste ninguna operación.";
+  }
+
+  echo "<div class='alert alert-info mt-3 mx-auto fs-5 w-25 text-center'>$resultado</div>";
+}
+?>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
