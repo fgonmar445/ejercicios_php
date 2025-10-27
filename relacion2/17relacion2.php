@@ -48,35 +48,45 @@
     </div>
 
     <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $dividendo = $_POST["dividendo"];
-  $divisor = $_POST["divisor"];
-  $resultado = "";
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $dividendo = $_POST["dividendo"];
+        $divisor = $_POST["divisor"];
+        $resultado = "";
 
-  if ($divisor == 0) {
-    $resultado = "Error: No se puede dividir entre cero.";
-  } elseif (isset($_POST["operaciones"])) {
-    $operaciones = $_POST["operaciones"];
-    $resultado .= "<ul class='list-unstyled text-decoration-none'>";
+        if ($divisor == 0) {
+            $resultado = "Error: No se puede dividir entre cero.";
+        } elseif (isset($_POST["operaciones"])) {
+            $operaciones = $_POST["operaciones"];
+            $resultado .= "<ul class='list-unstyled text-decoration-none'>";
 
-    if (in_array("cociente", $operaciones)) {
-      $cociente = intdiv($dividendo, $divisor);
-      $resultado .= "<li>Cociente: $cociente</li>";
+            // Recorremos todas las operaciones seleccionadas con foreach
+            foreach ($operaciones as $op) {
+                switch ($op) {
+                    case "cociente":
+                        $cociente = intdiv($dividendo, $divisor);
+                        $resultado .= "<li>Cociente: $cociente</li>";
+                        break;
+
+                    case "resto":
+                        $resto = $dividendo % $divisor;
+                        $resultado .= "<li>Resto: $resto</li>";
+                        break;
+
+                    default:
+                        $resultado .= "<li>Operación desconocida: $op</li>";
+                        break;
+                }
+            }
+
+            $resultado .= "</ul>";
+        } else {
+            $resultado = "No seleccionaste ninguna operación.";
+        }
+
+        echo "<div class='alert alert-info mt-3 mx-auto fs-5 w-25 text-center'>$resultado</div>";
     }
+    ?>
 
-    if (in_array("resto", $operaciones)) {
-      $resto = $dividendo % $divisor;
-      $resultado .= "<li>Resto: $resto</li>";
-    }
-
-    $resultado .= "</ul>";
-  } else {
-    $resultado = "No seleccionaste ninguna operación.";
-  }
-
-  echo "<div class='alert alert-info mt-3 mx-auto fs-5 w-25 text-center'>$resultado</div>";
-}
-?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
