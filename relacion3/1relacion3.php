@@ -14,21 +14,9 @@
     <input type="number" class="form-control" name="num1" id="num1" required placeholder="Introduce un numero positivo">
     <input type="submit" class="btn btn-success" value="Enviar">
     <?php
+    
+    require_once '4relacion3_libreria.php';
 
-    function esPrimo($num): bool
-    {
-
-      if ($num < 2 || $num != intval($num)) {
-        return false;
-      }
-
-      for ($i = 2; $i <= sqrt($num); $i++) {
-        if ($num % $i == 0)
-          return false;
-      }
-
-      return true;
-    }
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['num1'])) {
       $numero = $_GET['num1'];

@@ -9,24 +9,14 @@
 
 <body>
     <h1>Ejercicio 2 - Relacion 3</h1>
-    <form action="<?php
-
-                    use BcMath\Number;
-
-                    echo $_SERVER['PHP_SELF']; ?>" method="get">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
         <input type="number" name="num" id="num" placeholder="ingrese un numero">
         <input type="submit" value="Enviar">
     </form>
     <?php
-    function factorial(int $num)
-    {
-        $total = 1;
-
-        for ($i = 1; $i <= $num; $i++) {
-            $total *= $i;
-        }
-        return $total;
-    }
+    
+    require_once '4relacion3_libreria.php';
+    
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['num'])) {
 
         $num = intval($_GET['num']);

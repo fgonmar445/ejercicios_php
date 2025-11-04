@@ -18,21 +18,9 @@
         <input type="number" name="num2" id="num2">
         <input type="submit" value="Enviar">
     </form>
+
     <?php
-
-    function MCD(int $num1, int $num2)
-    {
-        while ($num1 != $num2) {
-
-            if ($num1 > $num2) {
-                $num1 -= $num2;
-            } else {
-                $num2 -= $num1;
-            }
-        }
-        return $num1;
-    }
-
+    require_once '4relacion3_libreria.php';
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['num1']) && isset($_GET['num2'])) {
 
         $num1 = $_GET['num1'];

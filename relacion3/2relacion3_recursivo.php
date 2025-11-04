@@ -9,6 +9,7 @@
 
 <body>
     <h1>Ejercicio 2 Recursivo - Relacion 3</h1>
+
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
 
         <input type="number" name="num" id="num" placeholder="ingrese un numero">
@@ -17,19 +18,12 @@
     </form>
     <?php
 
-    function factorial(int $num)
-    {
-        if ($num == 0 || $num == 1) {
-            return 1;
-        }
-
-        return $num * factorial($num - 1);
-    }
+    require_once '4relacion3_libreria.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['num'])) {
 
         $num = intval($_GET['num']);
-        $resul = factorial($num);
+        $resul = factorial_recurs($num);
 
         echo "<br>Para el numero introducido $num, es factorial es $resul";
     }
