@@ -34,6 +34,7 @@
       <button type="submit" class="btn btn-success">Procesar</button>
     </form>
     <?php
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $numero = intval($_POST["numero"]);
       $accion = $_POST["accion"];
@@ -69,8 +70,6 @@
           echo '<div class="alert alert-danger">⚠️ Opción no válida.</div>';
         }
       }
-    } else {
-      echo '<div class="alert alert-danger">⚠️ No se han enviado datos.</div>';
     }
     ?>
   </div>

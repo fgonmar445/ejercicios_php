@@ -66,7 +66,6 @@
                         16 => "Hexadecimal",
                     };
 
-                    echo "<hr>";
                     echo "<p><strong>Número original:</strong> $original</p>";
                     echo "<p><strong>Base seleccionada:</strong> $nombreBase</p>";
                     echo "<p><strong>Resultado:</strong> <span class='badge bg-info text-dark'>$resul</span></p>";
