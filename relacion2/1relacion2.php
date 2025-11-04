@@ -16,6 +16,7 @@
     <input type="number" step="0.01" class="form-control" name="num2" id="num2" required>
     <br><label for="operador" class="form-label">Selecciona operador:</label>
     <select class="form-select" name="operador" id="operador" required>
+      <option value="" disabled selected>Selecciona operación</option>
       <option value="+">Suma</option>
       <option value="-">Resta</option>
       <option value="*">Multiplicación</option>

@@ -25,6 +25,7 @@
 
                 <label class="form-label fs-4 fw-bold" for="operacion">Operacion:</label>
                 <select name="operacion" class="form-select mb-3 w-50">
+                    <option value="" disabled selected>Selecciona operación</option>
                     <option value="+">Sumar</option>
                     <option value="-">Restar</option>
                     <option value="*">Multiplicar</option>
