@@ -20,7 +20,7 @@
     </form>
 
     <?php
-    require_once '4relacion3_libreria.php';
+    require_once('./4relacion3_liberia.php');
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['num1']) && isset($_GET['num2'])) {
 
         $num1 = $_GET['num1'];

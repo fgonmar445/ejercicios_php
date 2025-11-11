@@ -28,11 +28,11 @@
         if ($tipo == 'minus') {
             $resul = strtolower($texto);
             echo "El texto en minus es: $resul";
+        } else {
+            $resul = strtoupper($texto);
+            echo "El texto en minus es: $resul";
         }
     }
-
-
     ?>
 </body>
-
 </html>
