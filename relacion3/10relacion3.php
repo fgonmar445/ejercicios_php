@@ -21,17 +21,14 @@
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['texto'])) {
         $texto = $_GET['texto'];
         $palabras = explode(' ', $texto);
-        $palabraMasLarga = '';
-
-        foreach ($palabras as $palabra) {
-            if (strlen($palabra) > strlen($palabraMasLarga)) {
-                $palabraMasLarga = $palabra;
-            }
-        }
+        $invertido = array_reverse($palabras);
 
         echo "<p>Texto original: <strong>$texto</strong></p>";
-        echo "<p>Palabra más larga: <strong>$palabraMasLarga</strong></p>";
+        echo "<p> Texto invertido: " . implode(' ', $invertido) . "</p>";
     }
+
+
+
 
 
     ?>
