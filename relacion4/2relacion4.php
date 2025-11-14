@@ -54,6 +54,10 @@ session_start();
                     $_SESSION['a'] = 0;
                     $_SESSION['b'] = 0;
                     session_destroy();
+                    echo '<div class="spinner-border text-primary d-flex justiy-content-center" role="status">
+                            <span class="sr-only "></span>
+                            </div>';
+                            header("refresh:30;");
                     break;
             }
         }

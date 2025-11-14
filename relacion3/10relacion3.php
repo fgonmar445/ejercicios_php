@@ -27,10 +27,6 @@
         echo "<p> Texto invertido: " . implode(' ', $invertido) . "</p>";
     }
 
-
-
-
-
     ?>
 
 
