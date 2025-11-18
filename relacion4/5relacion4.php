@@ -26,15 +26,12 @@
             
         }*/
 
-        private static $restaurantes = 0; // contador de clase
-
         // CONSTRUCTOR
         public function __construct(
             public String $nombre,
             public string $tipoCocina,
             public array $ratings = []
         ) {
-            Restaurante::$restaurantes++; // Self::$restaurantes++; otra manera
         }
 
         // DESTRUCTOR
