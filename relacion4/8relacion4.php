@@ -17,9 +17,9 @@
 
         public function __construct(private string $numeroCuenta, private string $nombre, private float $saldo = 0, private int $numOperaciones = 0) {}
 
-        public function __destruct(): string
+        public function __destruct()
         {
-            return "La cuenta con n: $this-> numeroCuenta ha sido eliminada";
+            echo "La cuenta con n: {$this->numeroCuenta} ha sido eliminada";
         }
 
         public function __toString(): string
@@ -30,17 +30,32 @@
             N operaciones: {$this->numOperaciones}";
         }
 
-        public function depositarDinero(int $n) {
+        public function depositarDinero(int $n)
+        {
             $this->saldo += $n;
+            $this->numOperaciones++;
         }
 
-        public function extraerDinero(int $n) {
-            $this->saldo -= $n;
+        public function extraerDinero(int $n)
+        {
+            if ($this->saldo >= $n) {
+                $this->saldo -= $n;
+                $this->numOperaciones++;
+            }
         }
 
-        public function transferirDinero(CuentaBancaria $c, int $n) {
-            $c-> saldo += $n;
-            $this->saldo -= $n;
+        public function transferirDinero(CuentaBancaria $c, int $n): string
+        {
+
+            if ($this->saldo >= $n) {
+                $c->saldo += $n;
+                $this->saldo -= $n;
+                $this->numOperaciones++;
+                $mensaje = "Transferencia realizada con exito";
+            } else {
+                $mensaje = "Transferencia no realizada, saldo insuficiente";
+            }
+            return $mensaje;
         }
     }
 
