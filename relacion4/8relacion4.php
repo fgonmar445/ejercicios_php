@@ -46,7 +46,6 @@
 
         public function transferirDinero(CuentaBancaria $c, int $n): string
         {
-
             if ($this->saldo >= $n) {
                 $c->saldo += $n;
                 $this->saldo -= $n;
