@@ -12,6 +12,8 @@
 
     <?php
 
+    declare(strict_types=1);
+
     class CuentaBancaria
     {
 
@@ -47,7 +49,7 @@
         public function transferirDinero(CuentaBancaria $c, int $n): string
         {
             if ($this->saldo >= $n) {
-                $c->saldo += $n;
+                $c->depositarDinero($n);
                 $this->saldo -= $n;
                 $this->numOperaciones++;
                 $mensaje = "Transferencia realizada con exito";

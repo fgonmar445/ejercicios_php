@@ -11,6 +11,7 @@
 <body>
     <?php
 
+    declare(strict_types=1);
     class Restaurante
     {
         /* HASTA LA V 8  
@@ -26,13 +27,14 @@
             
         }*/
 
+
+
         // CONSTRUCTOR
         public function __construct(
             public String $nombre,
             public string $tipoCocina,
             public array $ratings = []
-        ) {
-        }
+        ) {}
 
         // DESTRUCTOR
         public function __destruct()

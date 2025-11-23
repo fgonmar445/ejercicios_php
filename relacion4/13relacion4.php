@@ -26,7 +26,30 @@
             "apellidos" => "Martín Sánchez",
             "edad" => 22
         ]
-    ]; ?>
+    ];
+    echo "<pre>";
+    var_dump($socios);
+    echo "</pre>";
+
+    $json = json_encode($socios);
+    echo "<br><br>";
+    echo "<pre>";
+    var_dump($json);
+    echo "</pre>";
+
+    $decode = json_decode($json);
+    echo "<pre>";
+    echo "<br><br> Deode";
+    var_dump($decode);
+    echo "</pre>";
+    
+    //Para convertir a array asoc, true en json_decode
+    $array = json_decode($json,true);
+    echo "<pre>";
+    var_dump($array);
+    echo "</pre>";
+
+    ?>
 </body>
 
 </html>

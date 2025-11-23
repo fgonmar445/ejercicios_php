@@ -11,6 +11,7 @@
 <body>
     <?php
 
+    declare(strict_types=1);
     class Restaurante
     {
         /* HASTA LA V 8  
@@ -84,7 +85,8 @@
             $this->ratings[] = $n;
         }
 
-        public static function totalRest(): int  {
+        public static function totalRest(): int
+        {
             return Restaurante::$restaurantes;
         }
 

@@ -14,6 +14,7 @@
 
     <?php
 
+    declare(strict_types=1);
     enum Orientacion: string
     {
         case Horizontal = "horizontal";
@@ -23,7 +24,11 @@
     class BanderaFranjas
     {
 
-        public function __construct(private Orientacion $orientacion, private array $colores, private string $pais = "Sin adscripcion") {}
+        public function __construct(
+            private Orientacion $orientacion,
+            private array $colores,
+            private string $pais = "Sin adscripcion"
+        ) {}
 
         public function __destruct() {}
 
@@ -32,8 +37,9 @@
             return $this->colores;
         }
 
-        public function mostrarOrientacion(): string {
-            return $this -> orientacion->value;
+        public function mostrarOrientacion(): string
+        {
+            return $this->orientacion->value;
         }
 
         public function compararBanderas(BanderaFranjas $a): bool
@@ -72,7 +78,7 @@
 
                 $this->orientacion = Orientacion::Horizontal;
             }
-            return $this ->orientacion->value;
+            return $this->orientacion->value;
         }
     }
 

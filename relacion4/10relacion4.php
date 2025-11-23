@@ -10,6 +10,7 @@
 <body>
     <?php
 
+    declare(strict_types=1);
     interface encendible
     {
         public function encender(): string;

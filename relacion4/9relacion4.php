@@ -11,6 +11,7 @@
 
     <?php
 
+    declare(strict_types=1);
     abstract class Cuenta
     {
         private static int $nTotal_Cuentas = 0;
@@ -77,8 +78,8 @@
         }
         public function getSaldo(): float
         {
-            return $this->saldo;
             $this->totalOperaciones++;
+            return $this->saldo;
         }
     }
 
@@ -120,8 +121,8 @@
         }
         public function getSaldo(): float
         {
-            return $this->saldo;
             $this->totalOperaciones++;
+            return $this->saldo;
         }
     }
     ?>
@@ -152,7 +153,6 @@
     // Total de cuentas creadas
     echo "<p>Total de cuentas creadas: " . Cuenta::getTotalCuentas() . "</p>";
     ?>
-
 </body>
 
 </html>
