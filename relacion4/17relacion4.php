@@ -41,7 +41,7 @@
             Andaluz::saludar insteadof Vasco; //Preferimos el metodo saludar de andaluz
             Vasco::despedir insteadof Andaluz; //Preferimos el metodo saludar de andaluz
             Andaluz::despedir as decirAdios; //Creamos un alias para el metodo despedir de Andaluz
-            Andaluz::despedir as private; //Cambiamos visibilidad del metodo despedir, genera error xq despedir es privado
+           // Andaluz::despedir as private; //Cambiamos visibilidad del metodo despedir, genera error xq despedir es privado
         }
     }
 
